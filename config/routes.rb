@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  post "users" => 'users#create'
+
+  resources :users, only: [:index, :show, :create, :update, :destroy]
+
+  #crea todos los recursos incluyendo las vistas
+  #resources :users
+
+  #crear recursos uno a uno, sin usar los de Rails: para este ejemplo: Create
+  #post "users" => 'users#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

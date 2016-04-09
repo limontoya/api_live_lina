@@ -9,4 +9,8 @@ class UsersController < ApplicationController
       render json: {status: "Error creando el usuario", errors: user.errors}, status: :unprocessable_entity
     end
   end
+
+  def user_params
+    params.require(:user).permit(:name, :phone)
+  end
 end
